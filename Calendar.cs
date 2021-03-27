@@ -9,7 +9,8 @@ namespace Classes
         {
             static void classDisplay()
             {
-
+                Console.WriteLine(Classes.Class_Name);
+                Console.WriteLine(Classes.Teacher);
             }
         }
 
