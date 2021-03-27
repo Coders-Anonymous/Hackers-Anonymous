@@ -9,7 +9,7 @@ namespace Classes
         {
             static void setNotifications()
             {
-
+                class_notification = Classes.getDueDates().ToString();
             }
 
             static void customNotification()
