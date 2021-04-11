@@ -5,6 +5,7 @@ import { Container, Col, Row, Jumbotron, Form, Button, Link } from 'reactstrap';
 
 export class LoginPage extends Component {
 
+    // Names all states in the file
     constructor(props) {
         super(props);
         this.state = {
@@ -20,6 +21,9 @@ export class LoginPage extends Component {
         this.enableRegisterPage = this.enableRegisterPage.bind(this);
     }
 
+
+    // Allows Page to move to either the display page(currently not set up)
+    // or Register Page
     enableDisplayPage() {
         this.setState({
             isDisplay: true,
@@ -33,7 +37,7 @@ export class LoginPage extends Component {
         });
     }
 
-
+    // Allows inputs in textboxes
 
     handleChangeUser(e) {
         this.setState({
@@ -114,6 +118,7 @@ export class LoginPage extends Component {
                 </div>
             </>
         );
+        // Lets react figure out which page it is jumping to
         return (
             <di>
                 {this.state.isLoginPage ? clientComp : null}
@@ -123,6 +128,7 @@ export class LoginPage extends Component {
         );
     }
 
+    // What it uses to jump to the other page
     Display() {
         return (
             <Display />
