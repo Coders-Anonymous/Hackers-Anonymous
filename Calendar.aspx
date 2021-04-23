@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
 </head>
 <body>
 
@@ -22,7 +21,7 @@
       <a class="navbar-brand" href="#">Student Page</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/Student.aspx">Home</a></li>
+      <li class="active"><a href="#">Home</a></li>
       <li><a href="/Calendar.aspx">Calendar</a></li>
       <li><a href="#">Page 2</a></li>
       <li><a href="#">Page 3</a></li>
@@ -48,7 +47,7 @@
 </nav>
         <div style="width:50%; margin: 0 auto;">   
 
-            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="310px" Width="100%" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged" CellPadding="4" CellSpacing="1">
+            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="262px" Width="100%" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />            
             <OtherMonthDayStyle ForeColor="#999999" />
             <SelectedDayStyle BackColor="#333399" ForeColor="White" />
@@ -74,13 +73,6 @@
 
 
             <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" />
-
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" InsertCommand="INSERT INTO Classes(Assignment, DueDate) VALUES (@Assignment, @DueDate)" SelectCommand="SELECT Classes.* FROM Classes" OnSelecting="SqlDataSource1_Selecting">
-                <InsertParameters>
-                    <asp:Parameter Name="Assignment" />
-                    <asp:Parameter Name="DueDate" />
-                </InsertParameters>
-            </asp:SqlDataSource>
 
 
 
