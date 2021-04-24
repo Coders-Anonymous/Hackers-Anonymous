@@ -6,13 +6,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><body>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
           
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Student Page</a>
+      <a class="navbar-brand" href="#">Admin DashBoard</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -43,13 +43,13 @@
 <link href="Content/Admin.css" rel="stylesheet" />
 <div class="sidenav">
   <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#clients">RegistrationControl</a>
-  <a href="#contact">Add_Classes</a>
+  <a href="#services">Services System</a>
+  <a href="RegistrationControl.aspx">Registration Control</a>
+  <a href="CoursesControl.aspx">Courses Control</a>
 </div>
             
         </div>
    
-</body>
+
 </asp:Content>
 
