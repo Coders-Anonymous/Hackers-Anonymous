@@ -28,5 +28,50 @@ namespace User
                 Label2.Text = dr["LastName"].ToString();
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Classes.aspx", false);
+            Response.Redirect("~/Classes.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Student.aspx", false);
+            Response.Redirect("~/Student.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton5_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Student.aspx", false);
+            Response.Redirect("~/Student.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Classes.aspx", false);
+            Response.Redirect("~/Classes.aspx?Name=" + Label3.Text);
+
+        }
     }
 }
