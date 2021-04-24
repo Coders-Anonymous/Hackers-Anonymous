@@ -31,12 +31,14 @@ namespace User
                 {
                     SqlDataSource1.Insert();
                     GridView1.DataBind();
+                    Response.Redirect("~/Login Page.aspx");
                 }
                 catch (Exception ex)
                 {
                     ErrLabel.Text = ex.Message;
                 }
             }
+            
         }
     }
 }

@@ -38,7 +38,10 @@ namespace User
                     dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
-                        Label3.Text = "Not Failed";
+                        Label3.Text = "Logged In";
+                        Response.Redirect("~/Student.aspx",false);
+                        Response.Redirect("~/Student.aspx?Name=" + TextBox1.Text);
+
                     }
                     else
                     {

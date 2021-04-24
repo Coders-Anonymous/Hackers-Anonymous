@@ -5,20 +5,17 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
-    <h1 class="text-center">User Login</h1>
-    <form class="form-horizontal" id="form1" runat="server">
+<body class="bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.jpg');">
+    <h1 class="text-center text-white">User Login</h1>
+    <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label3" runat="server" Text=" "></asp:Label>
         </div>
-        <div class="col-sm-4">
-        </div>
         <center><div class="jumbotron">
-            <div class="container col-sm-4">
+            <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-4"></div>
                 <div class="items-center">
-                <div class="align-items-left">
+                <div>
                 <asp:Label class="text-left" ID="Label1" runat="server" Text="UserID: "></asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server" public-data ="Test"></asp:TextBox>
                 </div>
@@ -39,13 +36,11 @@
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [StudentID], [Password] FROM [Register]"></asp:SqlDataSource>
-                </div>
-                <div class="col-md-4"></div>
             </div>
             </div>
         </div>
+        </div>
             </center>
-        <div class="col-sm-4"></div>
     </form>
 </body>
 </html>
