@@ -52,6 +52,10 @@ namespace User
 
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
         {
+            e.Cell.BorderColor = System.Drawing.Color.Black;
+            e.Cell.BorderStyle = BorderStyle.Solid;
+            e.Cell.BorderWidth = 1;
+
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
             con.Open();
             string sql = "select Date from Notifications where StudentID ='" + Label3.Text + "'";
