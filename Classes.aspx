@@ -10,22 +10,25 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+    <link href="Content/Classes.css" rel="stylesheet" />
+
+</head>
 
 
 <body>
+
+    <!--navbar-->
+ <form id="form1" runat="server">
     <div class="topNav">
-<!-- <form id="form1" runat="server">-->
         <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Classes</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><asp:LinkButton ID="LinkButton5" runat="server" text-align = "center">Home</asp:LinkButton></li>
-      <li><asp:LinkButton ID="LinkButton2" runat="server" text-align = "center" PostBackUrl="~/Calender.aspx">Calendar</asp:LinkButton></li>
-      <li><asp:LinkButton ID="LinkButton3" runat="server" text-align = "center">Study Buddy</asp:LinkButton></li>
-      <li><asp:LinkButton ID="LinkButton4" runat="server" text-align = "center">Classes</asp:LinkButton></li>
+      <li><asp:LinkButton ID="LinkButton5" runat="server" text-align = "center" OnClick="LinkButton5_Click">Home</asp:LinkButton></li>
+      <li><asp:LinkButton ID="LinkButton2" runat="server" text-align = "center" OnClick="LinkButton2_Click">Calendar</asp:LinkButton></li>
+      <li class="active"><asp:LinkButton ID="LinkButton4" runat="server" text-align = "center" OnClick="LinkButton4_Click">Classes</asp:LinkButton></li>
     </ul>
 <ul class="nav navbar-nav navbar-right">
             <li><a href="#">
@@ -44,75 +47,120 @@
 </nav>
          </div>
 
-        <!------Sidebar--->
-    <div>
-<link href="Content/classes.css" rel="stylesheet" />
-<div class="sidenav">
-  <a href="#math">Math</a>
-  <a href="#english">English</a>
-  <a href="#science">Science </a>
-  <a href="#softwaredev">Software Dev</a>
-</div>
+         <!--CARDS / CLASSES INFO / CONTENT -->
+    <center><div class="wrapper">
+    <section class="cards">
+<!--   card 1 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton7_Click" id="LinkButton7" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__01" src="Images/MATH267.png" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__01">MATH 267</p>
+        <h5>Next Assignment</h5>
+      <h2>Factorial Assignment</h2>
+      <p>This assignment will be going over factorials. Please do not use a calculator on this assignment.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/1</h3>
         </div>
+    </footer>
+  </article></asp:LinkButton>
+<!--   card 2 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton8_Click" id="LinkButton8" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__02" src="Images/CIS306.png" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__02">CIS 306</p>
+        <h5>Next Assignment</h5>
+      <h2>Intro to Java</h2>
+      <p>This assignment will be a generic java assignment. You must create a single project - any project- using the Java Language.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/5</h3>
+        </div>
+    </footer>
+  </article></asp:LinkButton>
+<!--   card 3 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton9_Click" id="LinkButton9" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__03" src="Images/CS255.png" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__03">CS 255</p>
+        <h5>Next Assignment</h5>
+      <h2>Intro to Python</h2>
+      <p>This assignment will be going over generic python syntax.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/4</h3>
+        </div>
+    </footer>
+  </article></asp:LinkButton>
+<!--   card 4 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton10_Click" id="LinkButton10" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__04" src="Images/CS302.png" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__04">CS 302</p>
+        <h5>Next Assignment</h5>
+      <h2>React Page Rendering</h2>
+      <p>The goal of this assignment is to render a page in react. This page can be anything you want it to be.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/5</h3>
+        </div>
+    </footer>
+  </article></asp:LinkButton>
+<!--   card 5 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton11_Click" id="LinkButton11" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__02" src="Images/econ301.png" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__02">ECON 301</p>
+        <h5>Next Assignment</h5>
+      <h2>Supply and Demand Paper</h2>
+      <p>This will be a paper you need to write on the Supply and Demand. This paper will need to be at least 2 pages double spaced and a minimum of 500 words.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/3</h3>
+        </div>
+    </footer>
+  </article></asp:LinkButton>
+  <!--   card 6 -->
+  <asp:LinkButton runat="server" OnClick="LinkButton12_Click" id="LinkButton12" class="noUnderline"><article class="card">
+    <picture class="thumbnail">
+         <img class="category__01" src="Images/econ205.jpg" alt="" />
+    </picture>
+    <div class="card-content">
+      <p class="category category__01">ECON 205</p>
+        <h5>Next Assignment</h5>
+      <h2>Fed Research Paper</h2>
+      <p>This will be a research paper about the fed. Some topics you can include are how the Fed operates, who is in charge of the fed, and what they do.</p>
+   </div><!-- .card-content -->
+    <footer>
+      <div class="post-meta">
+        <h4>Due Date</h4>
+          <h3>5/3</h3>
+        </div>
+    </footer>
+  </article></asp:LinkButton>
+</section>
+</div></center>
+
     </form>
-<div id="wrapper" class="grid-container">
-    <div class="math" id="math">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
-<div id="make-3D-math-space">
-    <div id="math-card">
-        <div id="math-front">
-        	<div class="shadow"></div>
-            <img src="https://cdn2.iconfinder.com/data/icons/startup-butterscotch-vol-1/512/Calculator-512.png" alt="" />
-            <div class="math_overlay"></div>
-            <div class="stats">        	
-                <div class="stats-container">
-                    <span class="product_price">3/16</span>
-                    <span class="product_name">Math 267</span>    
-                    <p>Assignment 2 - Factorials</p>                                            
-                    
-                    <div class="product-options">
-                    <strong>Need Studdy Buddy?</strong>
-                    <span>Yes / No</span>
-                    <strong>COLORS</strong>
-                    <div class="colors">
-                        <div class="c-blue"><span></span></div>
-                        <div class="c-red"><span></span></div>
-                        <div class="c-white"><span></span></div>
-                        <div class="c-green"><span></span></div>
-                    </div>
-                </div>                       
-                </div>                         
-            </div>
-        </div>        
-        <script src="Scripts/JavaScript.js"></script>
-    </div>
-</div>	
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-</div>
-
-    <div class="science" id="english">
-        <h1>Class Name</h1>
-        <h3>Assignment Name</h3>
-        <h5>Due Date</h5>
-    </div>
-
-    <div class="english" id="science">
-        <h1>Class Name</h1>
-        <h3>Assignment Name</h3>
-        <h5>Due Date</h5>
-    </div>
-
-    <div class="softwaredev" id="softwaredev">
-        <h1>Class Name</h1>
-        <h3>Assignment Name</h3>
-        <h5>Due Date</h5>
-    </div>
-
-</div>
-
 </body>
 </html>
