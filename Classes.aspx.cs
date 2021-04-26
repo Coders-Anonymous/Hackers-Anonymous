@@ -20,7 +20,6 @@ namespace User
             if (Request.QueryString["Name"] != null)
             {
                 Label3.Text = Request.QueryString["Name"];
-                //TextBox5.Text = Label3.Text;
             }
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
             con.Open();
@@ -32,10 +31,10 @@ namespace User
                 Label1.Text = dr["FirstName"].ToString();
                 Label2.Text = dr["LastName"].ToString();
             }
-            con.Close();
+
         }
 
-        protected void displayAssignments(object sender, EventArgs e)
+      /*protected void displayAssignments(object sender, EventArgs e)
         {
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
             con.Open();
@@ -45,7 +44,68 @@ namespace User
             dr = cmd.ExecuteReader();
 
             con.Close();
-            //TextBox4.Text = Calendar1.SelectedDate.ToShortDateString();
+        }*/
+
+        protected void LinkButton5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Student.aspx", false);
+            Response.Redirect("~/Student.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Classes.aspx", false);
+            Response.Redirect("~/Classes.aspx?Name=" + Label3.Text);
+
+        }
+
+        protected void LinkButton7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton8_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton9_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton10_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton11_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton12_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calender.aspx", false);
+            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
         }
     }
 }
