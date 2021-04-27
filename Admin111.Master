@@ -38,7 +38,7 @@
                                 </div>
                                 </a></li>
                             <li><a href="#">
-                                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/AdminLogin.aspx">Log Out</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/LoginPage.aspx">Log Out</asp:LinkButton>
                                 </a></li>
                         </ul>
                     </div>
@@ -51,6 +51,6 @@
                 </div>
             </asp:ContentPlaceHolder>
         </div>
-    </form>
+    </form>a
 </body>
 </html>

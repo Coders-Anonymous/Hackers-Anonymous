@@ -7,18 +7,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <body> <div>
           
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Admin DashBoard</a>
+      <a class="navbar-brand" href="#">Admin Page</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
     </ul>
 <ul class="nav navbar-nav navbar-right">
             <li><a href="#">
@@ -32,7 +28,7 @@
             <li>
                 <a href="#">
 
-                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/AdminLogin.aspx">Log Out</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login.aspx">Log Out</asp:LinkButton>
 
                 </a>
             </li>
@@ -43,13 +39,12 @@
 <link href="Content/Admin.css" rel="stylesheet" />
 <div class="sidenav">
   <a href="#about">About</a>
-  <a href="#services">Services System</a>
-  <a href="RegistrationControl.aspx">Registration Control</a>
-  <a href="CoursesControl.aspx">Courses Control</a>
+  <a href="#services">Services</a>
+  <a href="#clients"><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" >Registration Control</asp:LinkButton></a>
+  <a href="#contact"><asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" >Courses Control</asp:LinkButton></a>
 </div>
             
         </div>
-   
-
+</body>
 </asp:Content>
 

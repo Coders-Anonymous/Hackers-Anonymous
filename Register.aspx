@@ -1,53 +1,60 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="User.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="User.Register" %>
 <!DOCTYPE html>
-<link href="Content/Register.css" rel="stylesheet" />
+<!--<link href="Content/Register.css" rel="stylesheet" />-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/Login%20Page.css" rel="stylesheet" />
     </head>
-<body class="bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.jpg')";>
-    <h1 class="text-center text-white">Register</h1>
+<body class="bg">
     <form id="form1" runat="server">
         <div> 
             <asp:Label ID="ErrLabel" runat="server" Text=" "></asp:Label>
         </div>
-        <center><div class="jumbotron">
+        <center><div class="reg-jumb">
+            <h1>Register</h1>
             <div class="container">
             <div class="row align-items-center">
                 <div class="items-center">
-            <asp:Label ID="Label1" runat="server" Text="StudentID: "></asp:Label>
-            <asp:TextBox ID="IDText" runat="server"></asp:TextBox>
+            <asp:Label CssClass="label" ID="Label1" runat="server" Text="StudentID: "></asp:Label>
+                    <br />
+            <asp:TextBox CssClass="tb" ID="IDText" runat="server"></asp:TextBox>
             <br />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="IDText" ErrorMessage="Please Enter StudentID"></asp:RequiredFieldValidator>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="First Name: "></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:Label CssClass="label" ID="Label2" runat="server" Text="First Name: "></asp:Label>
+                    <br />
+            <asp:TextBox CssClass="tb" ID="TextBox2" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Last Name: "></asp:Label>
+            <asp:Label CssClass="label" ID="Label3" runat="server" Text="Last Name: "></asp:Label>
+                    <br />
 
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-
-            <br />
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Password: "></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="tb" ID="TextBox3" runat="server"></asp:TextBox>
 
             <br />
+                    <br />
+            <asp:Label CssClass="label" ID="Label4" runat="server" Text="Password: "></asp:Label>
+                    <br />
+            <asp:TextBox CssClass="tb" ID="TextBox4" runat="server"></asp:TextBox>
+
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" />
+            <br />
+            <asp:Button class="register-btn" ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" />
         </div>
         <div>
 
-            Already Registered?
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login Page.aspx">Login Page</asp:LinkButton>
+            <h5>Already Registered?</h5>
+            <p>Click Below!</p>
+            <a class="login-btn" href="Login.aspx">Login Page</a>"
 
         </div>
         <div>
             </div>
                 </div>
                 </div>
-            
+            </div>
+
             <div>
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="StudentID" DataSourceID="SqlDataSource1">
                 <Columns>
@@ -67,7 +74,6 @@
             </asp:SqlDataSource>
 
         </div>
-            </div>
             </center>
     </form>
 </body>

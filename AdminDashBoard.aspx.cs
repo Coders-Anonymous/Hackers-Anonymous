@@ -15,12 +15,12 @@ namespace User
         SqlDataReader dr;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["Name"] != null)
+            if (Request.QueryString["Name"] != null)
             { Label3.Text = Request.QueryString["Name"]; }
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=C:\USERS\HMBUMBA\SOURCE\REPOS\USER\USER\APP_DATA\DATABASE1.MDF;Integrated Security=True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "Select Id, FirstName, LastName From AdminLog Where FirstName= '" + Label3.Text + "'";
+            cmd.CommandText = "Select FirstName, LastName From Admin Where AdminID= '" + Label3.Text + "'";
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -29,6 +29,18 @@ namespace User
             }
 
 
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/RegistrationControl.aspx", false);
+            Response.Redirect("~/RegistrationControl.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CoursesControl.aspx", false);
+            Response.Redirect("~/CoursesControl.aspx?Name=" + Label3.Text);
         }
     }
 }

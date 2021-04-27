@@ -1,0 +1,47 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+.navbar {
+    text-align: center;
+    background-color: #333333;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    vertical-align: bottom;
+}
+
+.container-fluid {
+    text-align: center;
+    background-color: #333333;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.navbar-header {
+    text-align: center;
+    padding-top: 1.6rem;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.navbar-nav {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background-color: #333333;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.content {
+    background-color: #333333;
+    outline: #333333;
+    border: #333333;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.navbar-brand {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.navbar-right {
+    text-transform: capitalize;
+}

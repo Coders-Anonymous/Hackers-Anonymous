@@ -19,17 +19,17 @@
 
     <!--navbar-->
  <form id="form1" runat="server">
-    <div class="topNav">
         <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Classes</a>
+    <div id="nav-header" class="navbar-header">
+      <a class="navbar-brand">Classes</a>
     </div>
     <ul class="nav navbar-nav">
       <li><asp:LinkButton ID="LinkButton5" runat="server" text-align = "center" OnClick="LinkButton5_Click">Home</asp:LinkButton></li>
       <li><asp:LinkButton ID="LinkButton2" runat="server" text-align = "center" OnClick="LinkButton2_Click">Calendar</asp:LinkButton></li>
       <li class="active"><asp:LinkButton ID="LinkButton4" runat="server" text-align = "center" OnClick="LinkButton4_Click">Classes</asp:LinkButton></li>
     </ul>
+         
 <ul class="nav navbar-nav navbar-right">
             <li><a href="#">
                 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
@@ -40,12 +40,11 @@
                 </a>
             </li>
             <li>
-                <asp:LinkButton ID="LinkButton1" runat="server" text-align = "center" PostBackUrl="~/Login Page.aspx">Log Out</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" text-align = "center" PostBackUrl="~/Login.aspx">Log Out</asp:LinkButton>
             </li>
         </ul>
   </div>
 </nav>
-         </div>
 
          <!--CARDS / CLASSES INFO / CONTENT -->
     <center><div class="wrapper">

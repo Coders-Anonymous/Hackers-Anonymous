@@ -15,7 +15,7 @@ namespace User
         SqlDataReader dr;
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\hmbumba\source\repos\User\User\App_Data\Database1.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace User
             {
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "Select * from AdminLog Where FirstName='" + TextBox1.Text + "'and Password= '" + TextBox2.Text + "'";
+                cmd.CommandText = "Select * from Admin Where AdminID='" + TextBox1.Text + "'and Password= '" + TextBox2.Text + "'";
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

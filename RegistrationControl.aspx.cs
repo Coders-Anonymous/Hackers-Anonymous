@@ -17,44 +17,60 @@ namespace User
             SqlConnection con = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-          
+
             {
                 if (Request.QueryString["Name"] != null)
                 { Label3.Text = Request.QueryString["Name"]; }
-                con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=C:\USERS\HMBUMBA\SOURCE\REPOS\USER\USER\APP_DATA\DATABASE1.MDF;Integrated Security=True";
+                con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "Select Id, FirstName, LastName From AdminLog Where FirstName= '" + Label3.Text + "'";
+                cmd.CommandText = "Select AdminID, FirstName, LastName From Admin Where AdminID= '" + Label3.Text + "'";
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     Label1.Text = dr["FirstName"].ToString();
                     Label2.Text = dr["LastName"].ToString();
                 }
-               
+
 
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //createc an User object
-            User user = new User();
-            user.Id = int.Parse(TextBox2.Text);
-            user.FirstName = TextBox3.Text;
-            user.LastName = TextBox4.Text;
-            user.Password = TextBox5.Text;
+            var parameter = SqlDataSource1.InsertParameters;
+            parameter["StudentID"].DefaultValue = TextBox2.Text;
+            parameter["FirstName"].DefaultValue = TextBox3.Text;
+            parameter["LastName"].DefaultValue = TextBox4.Text;
+            parameter["Password"].DefaultValue = TextBox5.Text;
 
-
-            //insert the user to the object data and bind the data to the gridview
+            //insert and bind data table
             try
             {
-                Models.DBAccess.InsertUser(user);
+                SqlDataSource1.Insert();
                 GridView1.DataBind();
+
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                TextBox4.Text = "";
+                TextBox5.Text = "";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Label5.Text = ex.Message;
+                ErrLabel.Text = ex.Message;
             }
         }
-}   }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/RegistrationControl.aspx", false);
+            Response.Redirect("~/RegistrationControl.aspx?Name=" + Label3.Text);
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CoursesControl.aspx", false);
+            Response.Redirect("~/CoursesControl.aspx?Name=" + Label3.Text);
+        }
+    }
+}

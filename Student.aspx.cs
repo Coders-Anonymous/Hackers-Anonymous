@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -26,27 +26,11 @@ namespace User
             { 
                 Label1.Text = dr["FirstName"].ToString();
                 Label2.Text = dr["LastName"].ToString();
+                Label5.Text = dr["FirstName"].ToString() + "!";
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Calender.aspx", false);
-            Response.Redirect("~/Calender.aspx?Name=" + Label3.Text);
-        }
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Classes.aspx", false);
-            Response.Redirect("~/Classes.aspx?Name=" + Label3.Text);
 
-        }
-
-        protected void LinkButton5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Student.aspx", false);
-            Response.Redirect("~/Student.aspx?Name=" + Label3.Text);
-
-        }
 
         protected void LinkButton5_Click1(object sender, EventArgs e)
         {

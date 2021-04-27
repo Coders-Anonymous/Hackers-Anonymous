@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,7 +31,7 @@ namespace User
                 {
                     SqlDataSource1.Insert();
                     GridView1.DataBind();
-                    Response.Redirect("~/Login Page.aspx");
+                    Response.Redirect("~/Login%20Page.aspx");
                 }
                 catch (Exception ex)
                 {

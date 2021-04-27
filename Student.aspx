@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Student.aspx.cs" Inherits="User.Student" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Student.aspx.cs" Inherits="User.Student" %>
 <!DOCTYPE html>
 <link href="Content/Navbar.css" rel="stylesheet" />
 <html lang="en">
@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="Content/student.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -17,12 +18,11 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Student Page</a>
+      <a class="navbar-brand">Student Page</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><asp:LinkButton ID="LinkButton5" runat="server" text-align = "center" OnClick="LinkButton5_Click1">Home</asp:LinkButton></li>
       <li><asp:LinkButton ID="LinkButton2" runat="server" text-align = "center" OnClick="LinkButton2_Click">Calendar</asp:LinkButton></li>
-      <li><asp:LinkButton ID="LinkButton3" runat="server" text-align = "center" OnClick="LinkButton3_Click">Study Buddy</asp:LinkButton></li>
       <li><asp:LinkButton ID="LinkButton4" runat="server" text-align = "center" OnClick="LinkButton4_Click">Classes</asp:LinkButton></li>
     </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -35,14 +35,30 @@
                 </a>
             </li>
             <li>
-                <asp:LinkButton ID="LinkButton1" runat="server" text-align = "center" PostBackUrl="~/Login Page.aspx">Log Out</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" text-align = "center" PostBackUrl="~/Login.aspx">Log Out</asp:LinkButton>
             </li>
         </ul>
   </div>
 </nav>
-            <div>
 
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="379px">
+        <div class="content-wrapper">
+            <div class="welcomeWrapper">
+
+                <h1 contenteditable spellcheck="false">Welcome,</h1>
+                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+
+            </div>
+       </div>
+        <div class="notes-wrapper">
+            <div class="notes-instructions">
+
+                <h3>View your submitted notes below!</h3>
+                <h5>View your classes or calendar by clicking on the corresponding links!</h5>
+
+            </div>
+
+                <center><div class="tableWrapper">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="425px">
                     <Columns>
                         <asp:BoundField DataField="Class" HeaderText="Class" SortExpression="Class" />
                         <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
@@ -54,11 +70,9 @@
                         <asp:ControlParameter ControlID="Label3" Name="StudentID" PropertyName="Text" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-
+</div></center>
+            </div>
                 <br />
-
-    </div>
-
     </form>
 </body>
 </html>
